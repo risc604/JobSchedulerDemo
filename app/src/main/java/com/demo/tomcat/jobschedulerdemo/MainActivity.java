@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity
     private JobScheduler    mJobScheduler;
     private Button  mSchedduleJobButton;
     private Button  mCancelAllJobButton;
+    private TextView  mTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity
     {
         mSchedduleJobButton = findViewById(R.id.schedule_job);
         mCancelAllJobButton = findViewById(R.id.cancel_all);
+        mTextView = findViewById(R.id.show_text);
     }
 
     private void initControl()
@@ -55,8 +58,12 @@ public class MainActivity extends AppCompatActivity
                 {
                     Toast.makeText(getBaseContext(), "Job Scheduler fail !!", Toast.LENGTH_SHORT).show();
                 }
+
+
             }
         });
+
+
 
         mCancelAllJobButton.setOnClickListener(new View.OnClickListener() {
             @Override

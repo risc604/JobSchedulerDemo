@@ -13,6 +13,8 @@ import java.util.Date;
 
 public class JobSchedulerService extends JobService
 {
+    String timeStamp = "";
+
     @SuppressLint("SimpleDateFormat")
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     private Handler mJobHandler = new Handler(new Handler.Callback()
@@ -23,6 +25,7 @@ public class JobSchedulerService extends JobService
             //int n = new Random().nextInt(100);
             Date date = new Date(System.currentTimeMillis());
 
+            setTimeStamp(sdf.format(date));
             Toast.makeText(getApplicationContext(), sdf.format(date), Toast.LENGTH_SHORT).show();
             jobFinished((JobParameters) msg.obj, false);
 
@@ -46,6 +49,15 @@ public class JobSchedulerService extends JobService
         return false;
     }
 
+    public String getTimeStamp()
+    {
+        return  timeStamp;
+    }
+
+    public void setTimeStamp(String timeStp)
+    {
+        timeStamp = timeStp;
+    }
 
 }
 
