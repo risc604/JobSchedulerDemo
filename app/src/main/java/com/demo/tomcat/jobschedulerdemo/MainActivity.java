@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity
     //------ User define function. ---------------------------------------//
     private void initView()
     {
-        mSchedduleJobButton = (Button) findViewById(R.id.schedule_job);
-        mCancelAllJobButton = (Button) findViewById(R.id.cancel_all);
+        mSchedduleJobButton = findViewById(R.id.schedule_job);
+        mCancelAllJobButton = findViewById(R.id.cancel_all);
     }
 
     private void initControl()
